@@ -1,9 +1,13 @@
-import './globals.css'
-
+import { Plus_Jakarta_Sans } from "@next/font/google";
+import "./globals.css";
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plusJakarta",
+});
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -12,7 +16,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className={`${plusJakarta.className} `}>{children}</body>
     </html>
-  )
+  );
 }
